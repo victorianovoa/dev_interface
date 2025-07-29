@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apresentação IHC - Inclusão Digital</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffeef5;
+      color: #4d004d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      max-width: 800px;
+      padding: 40px;
+      background: #fff0f6;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      display: none;
+      text-align: center;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #cc007a;
+    }
+
+    .nav-buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ffb3d9;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #4d004d;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff99cc;
+    }
+
+    @media (max-width: 600px) {
+      .slide {
+        padding: 20px;
+      }
+
+      button {
+        margin: 5px;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide active">
+    <h1>Guia de Inclusão Digital 📱✨</h1>
+    <p>Disciplina de Introdução à Computação - CEUB</p>
+    <p>Desenvolvido por: Victória Nóvoa e equipe</p>
+  </div>
+
+  <div class="slide">
+    <h2>O que é Inclusão Digital?</h2>
+    <p>Inclusão digital é garantir o acesso à tecnologia para todos, promovendo a cidadania e combatendo a exclusão social, especialmente entre pessoas idosas.</p>
+  </div>
+
+  <div class="slide">
+    <h2>Objetivo do Projeto</h2>
+    <p>Elaborar um guia digital simples e acessível para ensinar pessoas da terceira idade a utilizarem ferramentas digitais do dia a dia.</p>
+  </div>
+
+  <div class="slide">
+    <h2>Conteúdo do Guia</h2>
+    <ul style="text-align: left;">
+      <li>Uso do celular e WhatsApp</li>
+      <li>Apps do Google: Drive, Docs, Forms, etc</li>
+      <li>Gov.br e serviços públicos digitais</li>
+      <li>Dicas de segurança online</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Importância Social</h2>
+    <p>A inclusão digital permite que pessoas idosas se conectem com o mundo, aumentem sua autonomia e se mantenham ativas na sociedade.</p>
+  </div>
+
+  <div class="slide">
+    <h2>Conclusão</h2>
+    <p>Nosso projeto busca criar um futuro mais justo, acessível e conectado para todos — com carinho, paciência e tecnologia. 💖</p>
+  </div>
+
+  <div class="slide">
+    <h2>Obrigada! 🌸</h2>
+    <p>Vamos juntas tornar a tecnologia mais inclusiva e acolhedora para a terceira idade!</p>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">◀ Anterior</button>
+    <button onclick="nextSlide()">Próximo ▶</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+
+    // Teclado: seta esquerda/direita
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+
+</body>
+</html>
